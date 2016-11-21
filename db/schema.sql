@@ -1,18 +1,13 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS images;
+-- DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
   user_id SERIAL PRIMARY KEY,
   name VARCHAR(255),
-  location INT NOT NULL DEFAULT 0
+  search TEXT,
+  images TEXT
 );
 
-CREATE TABLE images (
-  images_id SERIAL PRIMARY KEY,
-  weight INT NOT NULL DEFAULT 0,
-  imageurl VARCHAR(255)
-);
 
 COMMIT;
