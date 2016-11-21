@@ -1,0 +1,18 @@
+BEGIN;
+
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS images;
+
+CREATE TABLE users (
+  user_id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  location INT NOT NULL DEFAULT 0
+);
+
+CREATE TABLE images (
+  images_id SERIAL PRIMARY KEY,
+  weight INT NOT NULL DEFAULT 0,
+  imageurl VARCHAR(255)
+);
+
+COMMIT;
