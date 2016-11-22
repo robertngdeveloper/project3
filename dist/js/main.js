@@ -47,7 +47,7 @@
   \**********************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(/*! react-dom */ 32);var _reactDom2=_interopRequireDefault(_reactDom);var _App=__webpack_require__(/*! ./components/App.jsx */ 178);var _App2=_interopRequireDefault(_App);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}// mount our App at #container
+	'use strict';var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(/*! react-dom */ 32);var _reactDom2=_interopRequireDefault(_reactDom);var _App=__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/App.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));var _App2=_interopRequireDefault(_App);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}// mount our App at #container
 	_reactDom2.default.render(_react2.default.createElement(_App2.default,null),document.querySelector('#root-container'));
 
 /***/ },
@@ -7504,35 +7504,6 @@
 	if(standardName==null){warnedProperties[name]=true;return false;}// aria-* attributes should be lowercase; suggest the lowercase version.
 	if(name!==standardName){process.env.NODE_ENV!=='production'?warning(false,'Unknown ARIA attribute %s. Did you mean %s?%s',name,standardName,ReactComponentTreeHook.getStackAddendumByID(debugID)):void 0;warnedProperties[name]=true;return true;}}return true;}function warnInvalidARIAProps(debugID,element){var invalidProps=[];for(var key in element.props){var isValid=validateProperty(element.type,key,debugID);if(!isValid){invalidProps.push(key);}}var unknownPropString=invalidProps.map(function(prop){return'`'+prop+'`';}).join(', ');if(invalidProps.length===1){process.env.NODE_ENV!=='production'?warning(false,'Invalid aria prop %s on <%s> tag. '+'For details, see https://fb.me/invalid-aria-prop%s',unknownPropString,element.type,ReactComponentTreeHook.getStackAddendumByID(debugID)):void 0;}else if(invalidProps.length>1){process.env.NODE_ENV!=='production'?warning(false,'Invalid aria props %s on <%s> tag. '+'For details, see https://fb.me/invalid-aria-prop%s',unknownPropString,element.type,ReactComponentTreeHook.getStackAddendumByID(debugID)):void 0;}}function handleElement(debugID,element){if(element==null||typeof element.type!=='string'){return;}if(element.type.indexOf('-')>=0||element.props.is){return;}warnInvalidARIAProps(debugID,element);}var ReactDOMInvalidARIAHook={onBeforeMountComponent:function onBeforeMountComponent(debugID,element){if(process.env.NODE_ENV!=='production'){handleElement(debugID,element);}},onBeforeUpdateComponent:function onBeforeUpdateComponent(debugID,element){if(process.env.NODE_ENV!=='production'){handleElement(debugID,element);}}};module.exports=ReactDOMInvalidARIAHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
-
-/***/ },
-/* 178 */
-/*!********************************!*\
-  !*** ./src/components/App.jsx ***!
-  \********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);__webpack_require__(/*! ./app.css */ 179);var _App=__webpack_require__(/*! ./App.css */ 180);var _App2=_interopRequireDefault(_App);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}// import the libs we need
-	// create a React Component called _App_
-	var App=function(_Component){_inherits(App,_Component);function App(){_classCallCheck(this,App);var _this=_possibleConstructorReturn(this,(App.__proto__||Object.getPrototypeOf(App)).call(this));_this.state={};return _this;}_createClass(App,[{key:'render',value:function render(){return _react2.default.createElement('div',{id:'app-container'},_react2.default.createElement('h1',null,'Hello Meteors!'));}}]);return App;}(_react.Component);exports.default=App;
-
-/***/ },
-/* 179 */
-/*!********************************!*\
-  !*** ./src/components/app.css ***!
-  \********************************/
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 180 */
-/*!********************************!*\
-  !*** ./src/components/App.css ***!
-  \********************************/
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);
