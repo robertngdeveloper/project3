@@ -25,9 +25,9 @@ class App extends Component {
     .then(r => r.json())
     .then((data) => {
       console.log('$$$$$$', data)
-      setTimeout(() => {this.setState({
+      this.setState({
         roverImages: data
-      })}, 4000)
+      })
     })
     .catch(err => console.log(err))
     console.log('%%%%%%', this.state.roverImages)
