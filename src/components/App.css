@@ -1,3 +1,18 @@
 body {
   background-color: lightgrey;
 }
+
+h1 {
+  text-align: center;
+}
+
+#pic-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+img {
+  width: auto;
+  height: 70vh;
+}
