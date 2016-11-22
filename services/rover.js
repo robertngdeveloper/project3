@@ -1,9 +1,6 @@
 
 const fetch = require('node-fetch');
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 const ROVER_KEY = process.env.ROVER_KEY;
 
 
@@ -13,6 +10,7 @@ function getRoverImages(req, res, next) {
  .then(r => r.json())
  .then((result) => {
    res.rover = result;
+   console.log(result);
    next();
  })
  .catch((err) => {
