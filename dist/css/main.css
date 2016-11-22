@@ -2,38 +2,22 @@ body {
   background-color: lightgrey;
 }
 
-.rover-container {
-  /*height: 600px;
-  width: 800px;*/
-  display: inline-block;
+h1 {
+  text-align: center;
 }
 
-.bing-container {
-  height: 600px;
-  display: inline-block;
-}
-
-.image-container {
-  width: 80vw;
-}
-
-p {
-  font-size: 30px;
+#pic-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
 img {
-  max-height: 100%;
-  position: relative;
+  width: auto;
+  height: 70vh;
 }
-
-#image-container {
-  content-align: center;
-}
-.bing-container {
-  display: inline-block;
-}
-.rover-container {
-  display: inline-block;
+p {
+  font-size: 40px;
 }
 
 /*# sourceMappingURL=main.css.map*/
