@@ -1,5 +1,3 @@
-<<<<<<< HEAD
 node_modules/
-=======
->>>>>>> master
 .env
+dist/

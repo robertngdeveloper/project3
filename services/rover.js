@@ -1,6 +1,9 @@
 
 const fetch = require('node-fetch');
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 const ROVER_KEY = process.env.ROVER_KEY;
 
 
