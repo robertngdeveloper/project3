@@ -1,11 +1,9 @@
 // import the libs we need
 import React, { Component } from 'react';
-import Style from './App.css';
+import './App.css';
 import Bing from './bing/Bing.jsx';
 import Vision from './vision/Vision.jsx';
 import Rover from './rover/Rover.jsx';
-
-
 
 // create a React Component called _App_
 class App extends Component {
@@ -18,12 +16,12 @@ class App extends Component {
 
   render(){
     return (
-      <div className={Style["app-container"]}>
+      <div>
         <h1>Hello Mars</h1>
-        <div className={Style["image-container"]}>
-          <Rover />
-          <Bing />
-        </div>
+          <div id="pic-container">
+              <Rover />
+              <Bing />
+          </div>
         <Vision />
       </div>
     );
