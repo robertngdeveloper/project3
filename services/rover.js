@@ -7,7 +7,7 @@ const ROVER_KEY = process.env.ROVER_KEY;
 
 function getRoverImages(req, res, next) {
 
- fetch(`${API_URL}sol=1000&api_key=${ROVER_KEY}`)
+ fetch(`${API_URL}sol=500&api_key=${ROVER_KEY}`)
  .then(r => r.json())
  .then((result) => {
    res.rover = result;

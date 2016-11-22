@@ -2,18 +2,18 @@ body {
   background-color: lightgrey;
 }
 
-.App__rover-container___2k9Z3 {
+.rover-container {
   /*height: 600px;
   width: 800px;*/
   display: inline-block;
 }
 
-.App__bing-container___uk74t {
+.bing-container {
   height: 600px;
   display: inline-block;
 }
 
-.App__image-container___3qI3J {
+.image-container {
   width: 80vw;
 }
 
@@ -26,13 +26,13 @@ img {
   position: relative;
 }
 
-#App__image-container___3qI3J {
+#image-container {
   content-align: center;
 }
-.Bing__bing-container___3ma67 {
+.bing-container {
   display: inline-block;
 }
-.Rover__rover-container___1K1DC {
+.rover-container {
   display: inline-block;
 }
 

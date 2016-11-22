@@ -8,11 +8,11 @@ export default class Rover extends Component{
   }
 
   render(){
-    console.log(this.props)
+    console.log('^^^^^^^^', this.props.roverData)
 
     return (
       <div className="rover-container">
-        <img src={this.props.roverData[0].img_src} alt=""/>
+        <img src={this.props.roverData.photos[0].img_src} alt=""/>
       </div>
     );
   }

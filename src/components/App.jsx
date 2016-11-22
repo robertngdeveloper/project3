@@ -14,6 +14,7 @@ class App extends Component {
 
     this.state = {
       roverImages: [],
+      searchImages: false,
       bingImage: [],
       visionText: ''
     }
@@ -24,8 +25,21 @@ class App extends Component {
     .then(r => r.json())
     .then((data) => {
       console.log('$$$$$$', data)
-      this.setState({
+      setTimeout(() => {this.setState({
         roverImages: data
+      })}, 4000)
+    })
+    .catch(err => console.log(err))
+    console.log('%%%%%%', this.state.roverImages)
+  }
+
+  getVision(){
+    fetch(`/vision/:url`)
+    .then(r => r.json())
+    .then((data) => {
+      console.log('$$$$$$', data)
+      this.setState({
+        visionText: data
       })
     })
     .catch(err => console.log(err))
