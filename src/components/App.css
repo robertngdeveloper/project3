@@ -16,3 +16,7 @@ img {
   width: auto;
   height: 70vh;
 }
+
+#save-searches {
+  text-align: right;
+}

@@ -23,6 +23,7 @@ class App extends Component {
               <Bing />
           </div>
         <Vision />
+        <button id="save-searches">Save Searches</button>
       </div>
     );
   }
