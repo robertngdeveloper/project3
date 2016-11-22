@@ -2,7 +2,8 @@ const fetch = require('node-fetch');
 const VISION_KEY = process.env.VISION_KEY;
 
 function getVisionData(req, res, next) {
-  const image = 'http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FRB_486265257EDR_F0481570FHAZ00323M_.JPG';
+  console.log('*********************',{req})
+  const image = 'http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG';
   const URL = 'https://api.projectoxford.ai/vision/v1.0/analyze?visualFeatures=Description,Tags';
   const paramsObj = {
     method: 'POST',
