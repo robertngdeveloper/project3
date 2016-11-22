@@ -13,15 +13,34 @@ class App extends Component {
     super();
 
     this.state = {
+      roverImages: [],
+      bingImage: [],
+      visionText: ''
     }
+  }
+
+  getRoverImages(){
+    fetch(`/rover`)
+    .then(r => r.json())
+    .then((data) => {
+      console.log('$$$$$$', data)
+      this.setState({
+        roverImages: data
+      })
+    })
+    .catch(err => console.log(err))
+    console.log('%%%%%%', this.state.roverImages)
   }
 
   render(){
     return (
-      <div className={Style["app-container"]}>
+      <div className="app-container">
         <h1>Hello Mars</h1>
-        <div className={Style["image-container"]}>
-          <Rover />
+        <div className="image-container">
+          <Rover
+            roverData={this.state.roverImages}
+            getRoverImages={this.getRoverImages.bind(this)}
+          />
           <Bing />
         </div>
         <Vision />
