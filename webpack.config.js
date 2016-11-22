@@ -57,7 +57,10 @@ module.exports = {
       {
         test: /\.otf(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader?name=/fonts/[name].[ext]'
-      }
+      },
+      { test: /\.png$/,
+        loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]'
+      },
     ]
   }
 };
