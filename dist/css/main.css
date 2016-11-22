@@ -2,27 +2,47 @@ body {
   background-color: lightgrey;
 }
 
-h1 {
-  text-align: center;
+.rover-container {
+  /*height: 600px;
+  width: 800px;*/
+  display: inline-block;
 }
 
-#pic-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
+.bing-container {
+  height: 600px;
+  display: inline-block;
 }
 
-img {
-  width: auto;
-  height: 70vh;
+.image-container {
+  width: 80vw;
 }
 
+<<<<<<< HEAD
 #save-searches {
   text-align: right;
 }
 p {
   font-size: 40px;
   text-align: center;
+=======
+p {
+  font-size: 30px;
+}
+
+img {
+  max-height: 100%;
+  position: relative;
+}
+
+#image-container {
+  content-align: center;
+}
+.bing-container {
+  display: inline-block;
+}
+.rover-container {
+  display: inline-block;
+>>>>>>> 0105d12c18ea4291df49daeff86f609153791e08
 }
 
 /*# sourceMappingURL=main.css.map*/
