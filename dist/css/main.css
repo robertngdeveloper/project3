@@ -2,38 +2,22 @@ body {
   background-color: lightgrey;
 }
 
-.App__rover-container___2k9Z3 {
-  /*height: 600px;
-  width: 800px;*/
-  display: inline-block;
+h1 {
+  text-align: center;
 }
 
-.App__bing-container___uk74t {
-  height: 600px;
-  display: inline-block;
-}
-
-.App__image-container___3qI3J {
-  width: 80vw;
-}
-
-p {
-  font-size: 30px;
+#pic-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
 img {
-  max-height: 100%;
-  position: relative;
+  width: auto;
+  height: 70vh;
 }
-
-#App__image-container___3qI3J {
-  content-align: center;
-}
-.Bing__bing-container___3ma67 {
-  display: inline-block;
-}
-.Rover__rover-container___1K1DC {
-  display: inline-block;
+p {
+  font-size: 40px;
 }
 
 /*# sourceMappingURL=main.css.map*/
