@@ -6,7 +6,9 @@ const path    = require('path');
 const bodyParser = require('body-parser');
 const app     = express();
 const PORT    = process.argv[2] || process.env.port || 3000;
-const meteorsRouter = require('./routes/meteors');
+const roverRouter = require('./routes/rover');
+const visionRouter = require('./routes/vision');
+const bingRouter = require('./routes/bing');
 
 app.use(logger('dev'));
 
@@ -20,4 +22,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.use('/meteors', meteorsRouter);
+app.use('/rover', roverRouter);
+app.use('/vision', visionRouter);
+app.use('/bing', bingRouter);
