@@ -1,4 +1,7 @@
 node_modules/
 .env
 dist/
+<<<<<<< HEAD
 webpack.config.js
+=======
+>>>>>>> 0105d12c18ea4291df49daeff86f609153791e08
