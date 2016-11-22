@@ -29,3 +29,7 @@ img {
 #image-container {
   content-align: center;
 }
+
+#save-searches {
+  text-align: right;
+}
