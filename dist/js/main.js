@@ -47,7 +47,7 @@
   \**********************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(/*! react-dom */ 32);var _reactDom2=_interopRequireDefault(_reactDom);var _App=__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/App.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));var _App2=_interopRequireDefault(_App);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}// mount our App at #container
+	'use strict';var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(/*! react-dom */ 32);var _reactDom2=_interopRequireDefault(_reactDom);var _App=__webpack_require__(/*! ./components/App.jsx */ 178);var _App2=_interopRequireDefault(_App);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}// mount our App at #container
 	_reactDom2.default.render(_react2.default.createElement(_App2.default,null),document.querySelector('#root-container'));
 
 /***/ },
@@ -7505,7 +7505,6 @@
 	if(name!==standardName){process.env.NODE_ENV!=='production'?warning(false,'Unknown ARIA attribute %s. Did you mean %s?%s',name,standardName,ReactComponentTreeHook.getStackAddendumByID(debugID)):void 0;warnedProperties[name]=true;return true;}}return true;}function warnInvalidARIAProps(debugID,element){var invalidProps=[];for(var key in element.props){var isValid=validateProperty(element.type,key,debugID);if(!isValid){invalidProps.push(key);}}var unknownPropString=invalidProps.map(function(prop){return'`'+prop+'`';}).join(', ');if(invalidProps.length===1){process.env.NODE_ENV!=='production'?warning(false,'Invalid aria prop %s on <%s> tag. '+'For details, see https://fb.me/invalid-aria-prop%s',unknownPropString,element.type,ReactComponentTreeHook.getStackAddendumByID(debugID)):void 0;}else if(invalidProps.length>1){process.env.NODE_ENV!=='production'?warning(false,'Invalid aria props %s on <%s> tag. '+'For details, see https://fb.me/invalid-aria-prop%s',unknownPropString,element.type,ReactComponentTreeHook.getStackAddendumByID(debugID)):void 0;}}function handleElement(debugID,element){if(element==null||typeof element.type!=='string'){return;}if(element.type.indexOf('-')>=0||element.props.is){return;}warnInvalidARIAProps(debugID,element);}var ReactDOMInvalidARIAHook={onBeforeMountComponent:function onBeforeMountComponent(debugID,element){if(process.env.NODE_ENV!=='production'){handleElement(debugID,element);}},onBeforeUpdateComponent:function onBeforeUpdateComponent(debugID,element){if(process.env.NODE_ENV!=='production'){handleElement(debugID,element);}}};module.exports=ReactDOMInvalidARIAHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
-<<<<<<< HEAD
 /***/ },
 /* 178 */
 /*!********************************!*\
@@ -7574,8 +7573,6 @@
 	// removed by extract-text-webpack-plugin
 	module.exports = {"bing-container":"Bing__bing-container___3ma67"};
 
-=======
->>>>>>> master
 /***/ }
 /******/ ]);
 //# sourceMappingURL=main.js.map
