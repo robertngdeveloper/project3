@@ -7,7 +7,7 @@ export default class Form extends Component{
 
     return (
       <div className="bing-container">
-        <img src="http://www.cocoroselle.com/wp-content/uploads/2013/10/Coconut-Pie-Crust.jpg" alt=""/>
+        <img src={this.props.bingImage} alt=""/>
       </div>
     );
   }
