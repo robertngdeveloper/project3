@@ -17,14 +17,6 @@ body {
   width: 80vw;
 }
 
-<<<<<<< HEAD
-#save-searches {
-  text-align: right;
-}
-p {
-  font-size: 40px;
-  text-align: center;
-=======
 p {
   font-size: 30px;
 }
@@ -37,12 +29,15 @@ img {
 #image-container {
   content-align: center;
 }
+
+#save-searches {
+  text-align: right;
+}
 .bing-container {
   display: inline-block;
 }
 .rover-container {
   display: inline-block;
->>>>>>> 0105d12c18ea4291df49daeff86f609153791e08
 }
 
 /*# sourceMappingURL=main.css.map*/
