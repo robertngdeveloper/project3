@@ -1,6 +1,6 @@
 // import the libs we need
 import React, { Component } from 'react';
-import Style from './App.css';
+import './App.css';
 import Bing from './bing/Bing.jsx';
 import Vision from './vision/Vision.jsx';
 import Rover from './rover/Rover.jsx';
@@ -78,16 +78,23 @@ class App extends Component {
         bingImage: data.value[4].contentUrl,
         searchImages: true
       })
+
     console.log('HEYO', data.value)
     })
     .catch(err => console.log(err))
   }
   
 
+    console.log('HEYO', data)
+    })
+    .catch(err => console.log(err))
+  }
+
+
+
   render(){
     return (
       <div className="app-container">
-        <h1>Hello Mars</h1>
         <div className="image-container">
           <Rover
             roverData={this.state.roverImage}
@@ -99,12 +106,25 @@ class App extends Component {
             getBingImage={this.getBingImage.bind(this)}
           />
         </div>
+
         <Vision
           visionText={this.state.visionText}
           roverImage={this.state.roverImage}
           getVisionData={this.getVisionData.bind(this)}
         />
         <button>Refresh</button>
+
+          <div className="vision-container">
+            <Vision
+              visionText={this.state.visionText}
+              roverImage={this.state.roverImage}
+              getVisionData={this.getVisionData.bind(this)}
+            />
+          </div>
+        <button>Refresh</button>
+        <Vision />
+        <button id="save-searches">Save Searches</button>
+
       </div>
     );
   }

@@ -47,7 +47,7 @@
   \**********************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(/*! react-dom */ 32);var _reactDom2=_interopRequireDefault(_reactDom);var _App=__webpack_require__(/*! ./components/App.jsx */ 178);var _App2=_interopRequireDefault(_App);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}// mount our App at #container
+	'use strict';var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(/*! react-dom */ 32);var _reactDom2=_interopRequireDefault(_reactDom);var _App=__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/App.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));var _App2=_interopRequireDefault(_App);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}// mount our App at #container
 	_reactDom2.default.render(_react2.default.createElement(_App2.default,null),document.querySelector('#root-container'));
 
 /***/ },
@@ -7504,73 +7504,6 @@
 	if(standardName==null){warnedProperties[name]=true;return false;}// aria-* attributes should be lowercase; suggest the lowercase version.
 	if(name!==standardName){process.env.NODE_ENV!=='production'?warning(false,'Unknown ARIA attribute %s. Did you mean %s?%s',name,standardName,ReactComponentTreeHook.getStackAddendumByID(debugID)):void 0;warnedProperties[name]=true;return true;}}return true;}function warnInvalidARIAProps(debugID,element){var invalidProps=[];for(var key in element.props){var isValid=validateProperty(element.type,key,debugID);if(!isValid){invalidProps.push(key);}}var unknownPropString=invalidProps.map(function(prop){return'`'+prop+'`';}).join(', ');if(invalidProps.length===1){process.env.NODE_ENV!=='production'?warning(false,'Invalid aria prop %s on <%s> tag. '+'For details, see https://fb.me/invalid-aria-prop%s',unknownPropString,element.type,ReactComponentTreeHook.getStackAddendumByID(debugID)):void 0;}else if(invalidProps.length>1){process.env.NODE_ENV!=='production'?warning(false,'Invalid aria props %s on <%s> tag. '+'For details, see https://fb.me/invalid-aria-prop%s',unknownPropString,element.type,ReactComponentTreeHook.getStackAddendumByID(debugID)):void 0;}}function handleElement(debugID,element){if(element==null||typeof element.type!=='string'){return;}if(element.type.indexOf('-')>=0||element.props.is){return;}warnInvalidARIAProps(debugID,element);}var ReactDOMInvalidARIAHook={onBeforeMountComponent:function onBeforeMountComponent(debugID,element){if(process.env.NODE_ENV!=='production'){handleElement(debugID,element);}},onBeforeUpdateComponent:function onBeforeUpdateComponent(debugID,element){if(process.env.NODE_ENV!=='production'){handleElement(debugID,element);}}};module.exports=ReactDOMInvalidARIAHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
-
-/***/ },
-/* 178 */
-/*!********************************!*\
-  !*** ./src/components/App.jsx ***!
-  \********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _App=__webpack_require__(/*! ./App.css */ 179);var _App2=_interopRequireDefault(_App);var _Bing=__webpack_require__(/*! ./bing/Bing.jsx */ 180);var _Bing2=_interopRequireDefault(_Bing);var _Vision=__webpack_require__(/*! ./vision/Vision.jsx */ 182);var _Vision2=_interopRequireDefault(_Vision);var _Rover=__webpack_require__(/*! ./rover/Rover.jsx */ 183);var _Rover2=_interopRequireDefault(_Rover);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}// import the libs we need
-	// create a React Component called _App_
-	var App=function(_Component){_inherits(App,_Component);function App(){_classCallCheck(this,App);var _this=_possibleConstructorReturn(this,(App.__proto__||Object.getPrototypeOf(App)).call(this));_this.state={roverImage:'',searchImages:false,bingImage:'',visionText:''};return _this;}_createClass(App,[{key:'getVisionData',value:function getVisionData(url){var _this2=this;//console.log('^^^^^^^^^', url)
-	fetch('/vision',{method:'POST',headers:{'Content-type':'application/json; charset=UTF-8'},body:JSON.stringify({'url':url})}).then(function(r){return r.json();}).then(function(data){console.log(data);_this2.setState({visionText:data.description.captions[0].text});}).catch(function(err){return console.log(err);});}},{key:'getRoverImages',value:function getRoverImages(){var _this3=this;fetch('/rover').then(function(r){return r.json();}).then(function(data){// console.log('$$$$$$', data.photos[1].img_src)
-	_this3.setState({roverImage:data.photos[3].img_src,visionText:'Click me'});}).catch(function(err){return console.log(err);});}},{key:'getVision',value:function getVision(){var _this4=this;fetch('/vision').then(function(r){return r.json();}).then(function(data){console.log('$$$$$$',data);_this4.setState({visionText:data});}).catch(function(err){return console.log(err);});}},{key:'getBingImage',value:function getBingImage(string){var _this5=this;console.log('BLBLBLBLBLBAAAHHH',string);fetch('/bing',{method:'POST',headers:{'Content-type':'application/json; charset=UTF-8'},body:JSON.stringify({'string':string})}).then(function(r){return r.json();}).then(function(data){_this5.setState({bingImage:data.value[4].contentUrl,searchImages:true});console.log('HEYO',data.value);}).catch(function(err){return console.log(err);});}},{key:'render',value:function render(){return _react2.default.createElement('div',{className:'app-container'},_react2.default.createElement('h1',null,'Hello Mars'),_react2.default.createElement('div',{className:'image-container'},_react2.default.createElement(_Rover2.default,{roverData:this.state.roverImage,getRoverImages:this.getRoverImages.bind(this)}),_react2.default.createElement(_Bing2.default,{visionText:this.state.visionText,bingImage:this.state.bingImage,getBingImage:this.getBingImage.bind(this)})),_react2.default.createElement(_Vision2.default,{visionText:this.state.visionText,roverImage:this.state.roverImage,getVisionData:this.getVisionData.bind(this)}),_react2.default.createElement('button',null,'Refresh'));}}]);return App;}(_react.Component);exports.default=App;
-
-/***/ },
-/* 179 */
-/*!********************************!*\
-  !*** ./src/components/App.css ***!
-  \********************************/
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 180 */
-/*!**************************************!*\
-  !*** ./src/components/bing/Bing.jsx ***!
-  \**************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _Bing=__webpack_require__(/*! ./Bing.css */ 181);var _Bing2=_interopRequireDefault(_Bing);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var Form=function(_Component){_inherits(Form,_Component);function Form(){_classCallCheck(this,Form);return _possibleConstructorReturn(this,(Form.__proto__||Object.getPrototypeOf(Form)).apply(this,arguments));}_createClass(Form,[{key:'render',value:function render(){var _this2=this;console.log(this.props.visionText);console.log(this.props.bingImage);return _react2.default.createElement('div',{className:'bing-container'},_react2.default.createElement('img',{src:this.props.bingImage,alt:''}),_react2.default.createElement('button',{className:'bing-button',onClick:function onClick(){_this2.props.getBingImage(_this2.props.visionText);}},'Get Bing Image'));}}]);return Form;}(_react.Component);exports.default=Form;
-
-/***/ },
-/* 181 */
-/*!**************************************!*\
-  !*** ./src/components/bing/Bing.css ***!
-  \**************************************/
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 182 */
-/*!******************************************!*\
-  !*** ./src/components/vision/Vision.jsx ***!
-  \******************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var Vision=function(_Component){_inherits(Vision,_Component);function Vision(){_classCallCheck(this,Vision);return _possibleConstructorReturn(this,(Vision.__proto__||Object.getPrototypeOf(Vision)).apply(this,arguments));}_createClass(Vision,[{key:"render",value:function render(){var _this2=this;return _react2.default.createElement("div",{id:"vision-container"},_react2.default.createElement("button",{className:"vision-button",onClick:function onClick(){_this2.props.getVisionData(_this2.props.roverImage);}},this.props.visionText));}}]);return Vision;}(_react.Component);exports.default=Vision;
-
-/***/ },
-/* 183 */
-/*!****************************************!*\
-  !*** ./src/components/rover/Rover.jsx ***!
-  \****************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(/*! react */ 1);var _react2=_interopRequireDefault(_react);var _Rover=__webpack_require__(/*! ./Rover.css */ 184);var _Rover2=_interopRequireDefault(_Rover);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var Rover=function(_Component){_inherits(Rover,_Component);function Rover(){_classCallCheck(this,Rover);return _possibleConstructorReturn(this,(Rover.__proto__||Object.getPrototypeOf(Rover)).apply(this,arguments));}_createClass(Rover,[{key:'componentWillMount',value:function componentWillMount(){this.props.getRoverImages();}},{key:'render',value:function render(){return _react2.default.createElement('div',{className:'rover-container'},_react2.default.createElement('img',{src:this.props.roverData,alt:''}));}}]);return Rover;}(_react.Component);exports.default=Rover;
-
-/***/ },
-/* 184 */
-/*!****************************************!*\
-  !*** ./src/components/rover/Rover.css ***!
-  \****************************************/
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);
