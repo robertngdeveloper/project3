@@ -75,10 +75,10 @@ class App extends Component {
     .then(r => r.json())
     .then((data) => {
       this.setState({
-        bingImage: data.value[0].contentUrl,
+        bingImage: data.value[4].contentUrl,
         searchImages: true
       })
-    console.log('HEYO', data)
+    console.log('HEYO', data.value)
     })
     .catch(err => console.log(err))
   }
