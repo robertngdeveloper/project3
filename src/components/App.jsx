@@ -106,6 +106,8 @@ class App extends Component {
             />
           </div>
         <button>Refresh</button>
+        <Vision />
+        <button id="save-searches">Save Searches</button>
       </div>
     );
   }

@@ -27,10 +27,13 @@ body {
   text-align: center;
 }
 
-p {
-  font-size: 30px;
+#save-searches {
+  text-align: right;
 }
-
+p {
+  font-size: 40px;
+  text-align: center;
+}
 img {
   max-height: 100%;
   position: relative;
