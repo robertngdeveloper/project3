@@ -2,8 +2,8 @@ const fetch = require('node-fetch');
 const VISION_KEY = process.env.VISION_KEY;
 
 function getVisionData(req, res, next) {
-  console.log('&&&&&', req.body)
-  const image = req.body;
+  //console.log('oyoyoyoyoyoyo', req.body)
+  const image = req.body.url;
   const URL = 'https://api.projectoxford.ai/vision/v1.0/analyze?visualFeatures=Description,Tags';
   const paramsObj = {
     method: 'POST',
