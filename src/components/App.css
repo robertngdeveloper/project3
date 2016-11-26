@@ -1,20 +1,30 @@
 body {
-  background-color: lightgrey;
+  background-color: #f8f8f8;
 }
 
-.rover-container {
+.rover-container img{
   /*height: 600px;
   width: 800px;*/
+  height: 50vh;
   display: inline-block;
+  position: relative;
+  margin: 50 auto 0 auto;
 }
 
-.bing-container {
-  height: 600px;
+.bing-container img{
+  height: 50vh;
   display: inline-block;
+  position: relative;
+  margin: 50 auto 0 auto;
 }
 
 .image-container {
-  width: 80vw;
+  margin-top: 120px;
+  height: 60vh;
+  width: 100%;
+  display: block;
+  content-align: center;
+  text-align: center;
 }
 
 p {
@@ -28,4 +38,8 @@ img {
 
 #image-container {
   content-align: center;
+}
+
+#save-searches {
+  text-align: right;
 }

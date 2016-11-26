@@ -1,20 +1,30 @@
 body {
-  background-color: lightgrey;
+  background-color: #f8f8f8;
 }
 
-.App__rover-container___2k9Z3 {
+.rover-container img{
   /*height: 600px;
   width: 800px;*/
+  height: 50vh;
   display: inline-block;
+  position: relative;
+  margin: 50 auto 0 auto;
 }
 
-.App__bing-container___uk74t {
-  height: 600px;
+.bing-container img{
+  height: 50vh;
   display: inline-block;
+  position: relative;
+  margin: 50 auto 0 auto;
 }
 
-.App__image-container___3qI3J {
-  width: 80vw;
+.image-container {
+  margin-top: 120px;
+  height: 60vh;
+  width: 100%;
+  display: block;
+  content-align: center;
+  text-align: center;
 }
 
 p {
@@ -26,13 +36,17 @@ img {
   position: relative;
 }
 
-#App__image-container___3qI3J {
+#image-container {
   content-align: center;
 }
-.Bing__bing-container___3ma67 {
+
+#save-searches {
+  text-align: right;
+}
+.bing-container {
   display: inline-block;
 }
-.Rover__rover-container___1K1DC {
+.rover-container {
   display: inline-block;
 }
 

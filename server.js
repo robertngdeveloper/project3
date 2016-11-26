@@ -10,18 +10,16 @@ const roverRouter = require('./routes/rover');
 const visionRouter = require('./routes/vision');
 const bingRouter = require('./routes/bing');
 
+console.log(visionRouter);
+
 app.use(logger('dev'));
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.listen(PORT, () => console.log('server here! listening on', PORT));
-
 app.use(bodyParser.json());
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
 
 app.use('/rover', roverRouter);
 app.use('/vision', visionRouter);
 app.use('/bing', bingRouter);
+
+app.listen(PORT, () => console.log('server here! listening on', PORT));

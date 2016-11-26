@@ -1,9 +1,9 @@
-const router              = require('express').Router();
+const vision            = require('express').Router();
 const { getVisionData }  = require('../services/vision');
 
-
-router.get('/', getVisionData, (req, res) => {
+vision.route('/')
+  .post(getVisionData, (req, res) => {
   res.json(res.vision || []);
 })
 
-module.exports = router;
+module.exports = vision;
