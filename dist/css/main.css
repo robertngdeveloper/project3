@@ -1,34 +1,39 @@
 body {
-  background-color: lightgrey;
+  background-color: #f8f8f8;
 }
 
-.rover-container {
+.rover-container img{
   /*height: 600px;
   width: 800px;*/
+  height: 50vh;
   display: inline-block;
+  position: relative;
+  margin: 50 auto 0 auto;
 }
 
-.bing-container {
-  height: 600px;
+.bing-container img{
+  height: 50vh;
   display: inline-block;
+  position: relative;
+  margin: 50 auto 0 auto;
 }
 
 .image-container {
-  width: 80vw;
+  margin-top: 120px;
+  height: 60vh;
+  width: 100%;
+  display: block;
+  content-align: center;
+  text-align: center;
 }
 
-<<<<<<< HEAD
 #save-searches {
   text-align: right;
 }
 p {
   font-size: 40px;
   text-align: center;
-=======
-p {
-  font-size: 30px;
 }
-
 img {
   max-height: 100%;
   position: relative;
@@ -37,12 +42,15 @@ img {
 #image-container {
   content-align: center;
 }
+
+#save-searches {
+  text-align: right;
+}
 .bing-container {
   display: inline-block;
 }
 .rover-container {
   display: inline-block;
->>>>>>> 0105d12c18ea4291df49daeff86f609153791e08
 }
 
 /*# sourceMappingURL=main.css.map*/

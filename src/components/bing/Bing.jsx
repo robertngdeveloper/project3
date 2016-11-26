@@ -3,11 +3,13 @@ import Style from './Bing.css';
 
 export default class Form extends Component{
   render(){
-    console.log(this.props)
+    console.log(this.props.visionText)
+    console.log(this.props.bingImage)
 
     return (
       <div className="bing-container">
-        <img src="http://www.cocoroselle.com/wp-content/uploads/2013/10/Coconut-Pie-Crust.jpg" alt=""/>
+        <img src={this.props.bingImage} alt=""/>
+        <button className="bing-button" onClick={() => {this.props.getBingImage(this.props.visionText)}}>Get Bing Image</button>
       </div>
     );
   }
