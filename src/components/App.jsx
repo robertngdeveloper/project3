@@ -78,18 +78,9 @@ class App extends Component {
         bingImage: data.value[4].contentUrl,
         searchImages: true
       })
-
-    console.log('HEYO', data.value)
     })
     .catch(err => console.log(err))
   }
-  
-
-    console.log('HEYO', data)
-    })
-    .catch(err => console.log(err))
-  }
-
 
 
   render(){

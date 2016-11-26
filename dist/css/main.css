@@ -27,18 +27,10 @@ body {
   text-align: center;
 }
 
-<<<<<<< HEAD
 p {
   font-size: 30px;
-=======
-#save-searches {
-  text-align: right;
 }
-p {
-  font-size: 40px;
-  text-align: center;
->>>>>>> master
-}
+
 img {
   max-height: 100%;
   position: relative;
@@ -50,9 +42,6 @@ img {
 
 #save-searches {
   text-align: right;
-}
-.bing-container {
-  display: inline-block;
 }
 .rover-container {
   display: inline-block;
