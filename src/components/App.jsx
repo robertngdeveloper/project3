@@ -7,6 +7,8 @@ import Rover from './rover/Rover.jsx';
 import SignUpForm from './SignUp/SignUpForm.jsx';
 import LogInForm from './LogIn/LogInForm.jsx';
 import SavedImages from './SavedImages/SavedImages.jsx';
+import Refresh from '../images/Refresh.png';
+import Crosshair from '../images/Inverse.png';
 
 // create a React Component called _App_
 class App extends Component {
@@ -15,10 +17,16 @@ class App extends Component {
     super();
 
     this.state = {
-      roverImage: '',
+      roverImage: Crosshair,
       searchImages: false,
-      bingImage: '',
+      bingImage: Crosshair,
       visionText: '',
+      Refresh: Refresh,
+      counter: 0,
+      roverBox: 'boxcrosshair',
+      bingBox: 'boxcrosshair',
+      roverContainer: 'rover-container',
+      bingContainer: 'bing-container',
       signup: {
         username: '',
         password: ''
@@ -58,11 +66,30 @@ class App extends Component {
     .then((data) => {
       // console.log('$$$$$$', data.photos[1].img_src)
       this.setState({
-        roverImage: data.photos[3].img_src,
-        visionText: 'Click me'
+        roverBox: 'large-images',
+        roverContainer: 'large-images-container',
+        counter: 1,
+        roverImage: data.photos[2].img_src,
+        RoverImageHover: '',
+        visionText: <img className="brighten" className="crosshair" src={Crosshair} alt="Click"/>
       })
     })
     .catch(err => console.log(err))
+  }
+
+  refreshPage(){
+    this.setState({
+      roverImage: Crosshair,
+      searchImages: false,
+      bingImage: Crosshair,
+      visionText: '',
+      Refresh: Refresh,
+      counter: 0,
+      roverBox: 'boxcrosshair',
+      bingBox: 'boxcrosshair',
+      roverContainer: 'bing-rover-container',
+      bingContainer: 'bing-rover-container'
+    })
   }
 
   getVision(){
@@ -78,7 +105,6 @@ class App extends Component {
   }
 
   getBingImage(string){
-    console.log('yo', string)
     fetch(`/bing`, {
       method: 'POST',
       headers: {
@@ -89,8 +115,11 @@ class App extends Component {
     .then(r => r.json())
     .then((data) => {
       this.setState({
+        bingBox: 'large-images',
+        bingContainer: 'large-images-container',
         bingImage: data.value[4].contentUrl,
-        searchImages: true
+        searchImages: true,
+        BingImageHover: ''
       })
     })
     .catch(err => console.log(err))
@@ -248,10 +277,16 @@ getSavedImages() {
 
         <div className="image-container">
           <Rover
+            roverContainer={this.state.roverContainer}
+            roverBox={this.state.roverBox}
+            counter={this.state.counter}
             roverData={this.state.roverImage}
             getRoverImages={this.getRoverImages.bind(this)}
           />
           <Bing
+            bingContainer={this.state.bingContainer}
+            bingBox={this.state.bingBox}
+            counter={this.state.counter}
             visionText={this.state.visionText}
             bingImage={this.state.bingImage}
             getBingImage={this.getBingImage.bind(this)}
@@ -260,6 +295,7 @@ getSavedImages() {
 
           <div className="vision-container">
             <Vision
+              counter={this.state.counter}
               visionText={this.state.visionText}
               roverImage={this.state.roverImage}
               getVisionData={this.getVisionData.bind(this)}
@@ -269,6 +305,10 @@ getSavedImages() {
         <Vision />
           <div className="save-searches" onClick={() => this.saveSearch(this.state.roverImage, this.state.bingImage, this.state.visionText, this.state.username)}>
           Save Searches
+          </div>
+
+          <div className="refreshButton" onClick={() => {this.refreshPage()}}>
+            <img className="refreshImage" src={this.state.Refresh} alt="Refresh"/>
           </div>
 
           <SavedImages 
