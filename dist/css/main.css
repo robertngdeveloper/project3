@@ -43,6 +43,9 @@ img {
 #save-searches {
   text-align: right;
 }
+.bing-container {
+  display: inline-block;
+}
 .rover-container {
   display: inline-block;
 }
