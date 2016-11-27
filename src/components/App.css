@@ -1,45 +1,105 @@
 body {
-  background-color: #f8f8f8;
+  background-color: #fafafa;
 }
 
-.rover-container img{
-  /*height: 600px;
-  width: 800px;*/
-  height: 50vh;
-  display: inline-block;
-  position: relative;
-  margin: 50 auto 0 auto;
+* {
+  font-family: 'Arial', sans-serif;
 }
 
-.bing-container img{
-  height: 50vh;
+.large-images-container {
+  display: inline-block;
+}
+
+.large-images {
+  height: 549px;
   display: inline-block;
   position: relative;
-  margin: 50 auto 0 auto;
 }
 
 .image-container {
-  margin-top: 120px;
-  height: 60vh;
-  width: 100%;
-  display: block;
-  content-align: center;
   text-align: center;
+  margin-top: 150px;
+  height: 550px;
+}
+
+.bing-container {
+  height: 545px;
+  width: 545px;
+  border: 2px solid black;
+  display: inline-block;
+  position: relative;
+}
+
+.rover-container {
+  height: 545px;
+  width: 545px;
+  border: 2px solid black;
+  display: inline-block;
+  position: relative;
+}
+
+.crosshair-container {
+  text-align: center;
+  margin-top: 120px;
+  display: block;
 }
 
 p {
   font-size: 30px;
 }
 
-img {
-  max-height: 100%;
-  position: relative;
+.refreshImage {
+  position: absolute;
+  top: 75px;
+  right: 75px;
+  width: 30px;
+  height: 30px;
 }
 
-#image-container {
-  content-align: center;
+.vision-button {
+  margin-top: 40px;
+  font-size: 35px;
 }
 
-#save-searches {
-  text-align: right;
+.boxcrosshair {
+  height: 50px;
+  width: 50px;
+  margin-top: 43%;
+  background-color: black;
+  background-size: 45px 45px;
+  transition: transform .8s ease-in-out;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 3px solid #fafafa;
 }
+
+.crosshair {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  background-size: 45px 45px;
+  transition: transform .8s ease-in-out;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 3px solid #fafafa;
+}
+
+.boxcrosshair:hover {
+  background-color: blue;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.crosshair:hover {
+  background-color: blue;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.brighten:hover {
+  background-color: blue;
+}
+
+

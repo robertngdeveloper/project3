@@ -3,15 +3,12 @@ import Style from './Rover.css';
 
 export default class Rover extends Component{
 
-  componentWillMount() {
-    this.props.getRoverImages();
-  }
-
   render(){
     return (
-      <div className="rover-container">
-        <img src={this.props.roverData} alt=""/>
+      <div className={this.props.roverContainer}>
+        <img className={this.props.roverBox} src={this.props.roverData} alt="" onClick={() => this.props.getRoverImages()}/>
       </div>
     );
   }
 }
+
