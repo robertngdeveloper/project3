@@ -4,8 +4,12 @@ const BING_KEY = process.env.BING_KEY;
 
 function getBingImage(req, res, next) {
 
+  
+  
+
   const searchWords = req.body.string;
   const URL = `https://api.cognitive.microsoft.com/bing/v5.0/images/search?q=${searchWords}&count=5&license=ModifyCommercially`;
+
   const paramsObj = {
     method: 'POST',
     headers: {
