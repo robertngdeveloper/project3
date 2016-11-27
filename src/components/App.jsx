@@ -6,6 +6,7 @@ import Vision from './vision/Vision.jsx';
 import Rover from './rover/Rover.jsx';
 import SignUpForm from './SignUp/SignUpForm.jsx';
 import LogInForm from './LogIn/LogInForm.jsx';
+import SavedImages from './SavedImages/SavedImages.jsx';
 
 // create a React Component called _App_
 class App extends Component {
@@ -27,7 +28,8 @@ class App extends Component {
         username: '',
         password: ''
       },
-      username: ''
+      username: '',
+      savedImages: ''
     };
    } 
   
@@ -208,6 +210,21 @@ saveSearch(url, url2, text, username) {
 
 }
 
+getSavedImages() {
+  console.log('hey i am fetching images')
+  return fetch(`/images`, {
+    method: 'GET'
+  })
+  .then(r => r.json())
+  .then((data) => {
+    console.log('$$$ THE DATA IS', data)
+    this.setState({
+      savedImages: data
+    });
+    console.log(this.state.savedImages)
+  })
+  .catch(err => console.log(err));
+}
 
   render(){
     return (
@@ -253,6 +270,11 @@ saveSearch(url, url2, text, username) {
           <div className="save-searches" onClick={() => this.saveSearch(this.state.roverImage, this.state.bingImage, this.state.visionText, this.state.username)}>
           Save Searches
           </div>
+
+          <SavedImages 
+          SavedImages={this.state.SavedImages}
+          getSavedImages={this.getSavedImages.bind(this)}
+          />
 
       </div>
     );

@@ -3,8 +3,8 @@ import Style from './Bing.css';
 
 export default class Form extends Component{
   render(){
-    console.log(this.props.visionText)
-    console.log(this.props.bingImage)
+    // console.log(this.props.visionText)
+    // console.log(this.props.bingImage)
 
     return (
 
