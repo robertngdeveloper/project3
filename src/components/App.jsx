@@ -39,10 +39,9 @@ class App extends Component {
       username: '',
       savedImages: ''
     };
-   } 
-  
+   }
+
   getVisionData(url) {
-    //console.log('^^^^^^^^^', url)
     fetch('/vision', {
       method: 'POST',
       headers: {
@@ -54,7 +53,9 @@ class App extends Component {
     .then((data) => {
       console.log(data)
       this.setState({
-        visionText: data.description.captions[0].text
+        counter: 2,
+        visionText: data.description.captions[0].text,
+        CrosshairHover: ''
       })
     })
     .catch(err => console.log(err))
@@ -69,6 +70,7 @@ class App extends Component {
         roverBox: 'large-images',
         roverContainer: 'large-images-container',
         counter: 1,
+        roverImage: data.photos[3].img_src,
         roverImage: data.photos[2].img_src,
         RoverImageHover: '',
         visionText: <img className="brighten" className="crosshair" src={Crosshair} alt="Click"/>
@@ -96,7 +98,6 @@ class App extends Component {
     fetch(`/vision`)
     .then(r => r.json())
     .then((data) => {
-      console.log('$$$$$$', data)
       this.setState({
         visionText: data
       })
@@ -199,7 +200,7 @@ updateFormSignUpUsername(e) {
       })
     })
     .then(this.setState({
-      username: this.state.login.username,      
+      username: this.state.login.username,
       login: {
         username: '',
         password: ''
@@ -227,8 +228,8 @@ saveSearch(url, url2, text, username) {
       headers: {
         'Content-type': 'application/json'
       },
-  
-      body: JSON.stringify({ 
+
+      body: JSON.stringify({
         'url': url,
         'url2': url2,
         'text': text,
@@ -254,27 +255,24 @@ getSavedImages() {
   })
   .catch(err => console.log(err));
 }
-
   render(){
     return (
       <div className="app-container">
-
-              <SignUpForm
-                signUpUsername={this.state.signup.username}
-                signUpPassword={this.state.signup.password}
-                updateFormUsername={event => this.updateFormSignUpUsername(event)}
-                updateFormPassword={event => this.updateFormSignUpPassword(event)}
-                handleFormSubmit={() => this.handleSignUp()}
-              />
-              <LogInForm
-                className={this.state.login.loggedIn ? 'hidden' : ''}
-                logInUsername={this.state.login.username}
-                logInPassword={this.state.login.password}
-                updateFormUsername={event => this.updateFormLogInUsername(event)}
-                updateFormPassword={event => this.updateFormLogInPassword(event)}
-                handleFormSubmit={() => this.handleLogIn()}
-              />
-
+        <SignUpForm
+          signUpUsername={this.state.signup.username}
+          signUpPassword={this.state.signup.password}
+          updateFormUsername={event => this.updateFormSignUpUsername(event)}
+          updateFormPassword={event => this.updateFormSignUpPassword(event)}
+          handleFormSubmit={() => this.handleSignUp()}
+        />
+        <LogInForm
+          className={this.state.login.loggedIn ? 'hidden' : ''}
+          logInUsername={this.state.login.username}
+          logInPassword={this.state.login.password}
+          updateFormUsername={event => this.updateFormLogInUsername(event)}
+          updateFormPassword={event => this.updateFormLogInPassword(event)}
+          handleFormSubmit={() => this.handleLogIn()}
+        />
         <div className="image-container">
           <Rover
             roverContainer={this.state.roverContainer}
@@ -292,30 +290,28 @@ getSavedImages() {
             getBingImage={this.getBingImage.bind(this)}
           />
         </div>
-
-          <div className="vision-container">
-            <Vision
-              counter={this.state.counter}
-              visionText={this.state.visionText}
-              roverImage={this.state.roverImage}
-              getVisionData={this.getVisionData.bind(this)}
-            />
-          </div>
-        <button>Refresh</button>
-        <Vision />
-          <div className="save-searches" onClick={() => this.saveSearch(this.state.roverImage, this.state.bingImage, this.state.visionText, this.state.username)}>
-          Save Searches
-          </div>
-
-          <div className="refreshButton" onClick={() => {this.refreshPage()}}>
-            <img className="refreshImage" src={this.state.Refresh} alt="Refresh"/>
-          </div>
-
-          <SavedImages 
-          SavedImages={this.state.SavedImages}
-          getSavedImages={this.getSavedImages.bind(this)}
+        <div className="vision-container">
+          <Vision
+            counter={this.state.counter}
+            visionText={this.state.visionText}
+            roverImage={this.state.roverImage}
+            getVisionData={this.getVisionData.bind(this)}
           />
-
+        </div>
+        <div className="refreshButton" onClick={() => {this.refreshPage()}}>
+          <img className="refreshImage" src={this.state.Refresh} alt="Refresh"/>
+        </div>
+          <button>Refresh</button>
+        <div className="save-searches" onClick={() => this.saveSearch(this.state.roverImage, this.state.bingImage, this.state.visionText, this.state.username)}>
+          Save Searches
+        </div>
+        <div className="refreshButton" onClick={() => {this.refreshPage()}}>
+          <img className="refreshImage" src={this.state.Refresh} alt="Refresh"/>
+        </div>
+        <SavedImages
+        SavedImages={this.state.SavedImages}
+        getSavedImages={this.getSavedImages.bind(this)}
+        />
       </div>
     );
   }

@@ -92,6 +92,42 @@ p {
   transform: rotate(360deg);
 }
 
+.vision-button {
+  margin-top: 40px;
+  font-size: 35px;
+}
+
+.boxcrosshair {
+  height: 50px;
+  width: 50px;
+  margin-top: 43%;
+  background-color: black;
+  background-size: 45px 45px;
+  transition: transform .8s ease-in-out;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 3px solid #fafafa;
+}
+
+.crosshair {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  background-size: 45px 45px;
+  transition: transform .8s ease-in-out;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 3px solid #fafafa;
+}
+
+.boxcrosshair:hover {
+  background-color: blue;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
 .crosshair:hover {
   background-color: blue;
   -webkit-transform: rotate(360deg);
@@ -101,5 +137,3 @@ p {
 .brighten:hover {
   background-color: blue;
 }
-
-
