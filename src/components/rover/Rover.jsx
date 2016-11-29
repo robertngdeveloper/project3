@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Style from './Rover.css';
 
+// Create react components to pass through the props
 export default class Rover extends Component{
 
   render(){

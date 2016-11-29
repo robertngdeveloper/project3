@@ -1,3 +1,6 @@
+// required middleware for to run our web application; node dependencies,
+// routes, and interaction between files
+
 'use strict'
 require('dotenv').config({ silent: true });
 const express = require('express');
@@ -16,14 +19,18 @@ const imagesRouter        = require('./routes/images');
 
 console.log(visionRouter);
 
+// To log issues to the terminal
 app.use(logger('dev'));
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
+// Parse cookie value
 app.use(cookieParser());
 
+// Parse data from fetch, to send as a JSON object
 app.use(bodyParser.json());
 
+// Routes used in our web application
 app.use('/rover', roverRouter);
 app.use('/vision', visionRouter);
 app.use('/bing', bingRouter);
@@ -31,4 +38,5 @@ app.use('/api/users', usersRouter);
 app.use('/api/auth', authRouter);
 app.use('/images', imagesRouter)
 
+// To log whether a server is running
 app.listen(PORT, () => console.log('server here! listening on', PORT));

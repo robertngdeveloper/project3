@@ -1,6 +1,9 @@
+// Require node-fetch module
 const fetch = require('node-fetch');
+// Create a const variable for processing the Microsoft Computer Visions API
 const VISION_KEY = process.env.VISION_KEY;
-
+// API function call that takes the Microsoft Computer Visions API call and
+// the string of the JSON file and returns the objects of the API
 function getVisionData(req, res, next) {
   //console.log('oyoyoyoyoyoyo', req.body)
   const image = req.body.url;

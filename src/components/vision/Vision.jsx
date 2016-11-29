@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// Create react components to pass through the props
 export default class Vision extends Component{
   render(){
     return (

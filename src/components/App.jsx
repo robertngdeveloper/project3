@@ -1,4 +1,4 @@
-// import the libs we need
+// Set up to pass the props through from the parent
 import React, { Component } from 'react';
 import './App.css';
 import Bing from './bing/Bing.jsx';
@@ -10,9 +10,10 @@ import SavedImages from './SavedImages/SavedImages.jsx';
 import Refresh from '../images/Refresh.png';
 import Crosshair from '../images/Inverse.png';
 
-// create a React Component called _App_
+// create a React Component that the props will be passed through
 class App extends Component {
-
+// Initiate values for each of the keys to be passed through their respective
+// components
   constructor() {
     super();
 
@@ -41,6 +42,8 @@ class App extends Component {
     };
    }
 
+// Function call that posts to the body of the /vision url as a string, then
+// passes JSON as props to respective component
   getVisionData(url) {
     fetch('/vision', {
       method: 'POST',
@@ -61,6 +64,8 @@ class App extends Component {
     .catch(err => console.log(err))
   }
 
+// Function call that fetches from the /rover url then passes JSON objects
+// as props through respective components
   getRoverImages(){
     fetch(`/rover`)
     .then(r => r.json())
@@ -79,6 +84,7 @@ class App extends Component {
     .catch(err => console.log(err))
   }
 
+// Function call to rerender the props
   refreshPage(){
     this.setState({
       roverImage: Crosshair,
@@ -94,6 +100,8 @@ class App extends Component {
     })
   }
 
+// Function call from the /vision url that passes the objects in JSON format as
+// props
   getVision(){
     fetch(`/vision`)
     .then(r => r.json())
@@ -105,6 +113,8 @@ class App extends Component {
     .catch(err => console.log(err))
   }
 
+// Function call that posts values of JSON in /bing url as a string, then passes
+// as props to respective component when called upon
   getBingImage(string){
     fetch(`/bing`, {
       method: 'POST',
@@ -127,6 +137,7 @@ class App extends Component {
   }
 
   ///////////////////// Rafa's User Auth Code ////////////////
+
 
 updateFormSignUpUsername(e) {
     console.log(e.target.value);
@@ -220,7 +231,8 @@ updateFormSignUpUsername(e) {
 
 //////////////////////////////////////////////////////////////
 
-// save search results to database
+// Function call that takes respective parameters then posts to the body of the
+// /images routes as a string
 saveSearch(url, url2, text, username) {
   console.log('^^^^^^the username is:',username)
   return fetch(`/images`, {
@@ -240,6 +252,8 @@ saveSearch(url, url2, text, username) {
 
 }
 
+// Function call that gets from the /images route then passes objects in JSON
+// as props
 getSavedImages() {
   console.log('hey i am fetching images')
   return fetch(`/images`, {
@@ -255,6 +269,8 @@ getSavedImages() {
   })
   .catch(err => console.log(err));
 }
+
+// render props into their respective components when initiated
   render(){
     return (
       <div className="app-container">

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import style from './LogInForm.css';
 
-// create a React Component called _App_
+// Create react components to pass through the props
 class LogInForm extends Component {
 
   render(){
